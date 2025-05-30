@@ -13,11 +13,11 @@ function navbar() {
 
     return (
         <>
-            <div className='flex flex-row py-3 px-5 bg-transparent z-20 fixed w-full top-0 left-0'>
+            <div className='flex flex-row py-3 px-5 bg-transparent z-30 fixed w-full top-0 left-0'>
                 <div className='flex-2 text-[25px] font-bold text-white'>
                     <span className='text-yellow-400'>Now</span> Streamed
                 </div>
-                <ul className='  flex-4 justify-evenly items-center hidden md:flex'>
+                <ul className='flex-4 justify-evenly items-center hidden md:flex'>
                     {
                         url_links.map((item, index) => (
                             <li key={index}>
@@ -41,13 +41,13 @@ function navbar() {
                     {
                         url_links.map((item, index) => (
                             <li key={index} className='my-2'>
-                                <a className='hover:text-yellow-400' href={item.link}>{item.name}</a>
+                                <a className='hover:text-yellow-400 text-white' href={item.link}>{item.name}</a>
                             </li>
                         ))
                     }
                 </ul>
                 <div className='md:hidden items-center mt-2'>
-                    <button className='hover:text-yellow-400 hover:cursor-pointer'><FaSearch /></button>
+                    <button className='hover:text-yellow-400 hover:cursor-pointer text-white'><FaSearch /></button>
                 </div>
             </div>
             }
