@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
-function Heroinfo({ m_id }) {
+function watchlist({ m_id }) {
   const [details, setDetails] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -56,4 +56,4 @@ function Heroinfo({ m_id }) {
   );
 }
 
-export default Heroinfo;
+export default watchlist;

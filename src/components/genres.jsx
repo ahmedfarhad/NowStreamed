@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 
-function herogenres({ m_id }) {
+function genres({ m_id }) {
 
     const [details, setDeatils] = useState([]);
 
@@ -29,4 +29,4 @@ function herogenres({ m_id }) {
   )
 }
 
-export default herogenres;
+export default genres;

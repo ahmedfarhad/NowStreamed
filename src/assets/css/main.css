@@ -1,0 +1,4 @@
+.swiper-button-prev,
+.swiper-button-next {
+  color: #facc15; /* Tailwind's yellow-400 */
+}
