@@ -6,32 +6,17 @@ import { FiMenu, FiX } from 'react-icons/fi';
 function navbar() {
 
     const [isshow, setIsShow] = useState(false)
-    const [bg, setBg] = useState(false)
 
     const openNavBar = () => {
         setIsShow(!isshow);
     }
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 300) {
-                setBg(true)
-            }
-            else {
-                setBg(false)
-            }
-        }
-
-        window.addEventListener('scroll', handleScroll)
-
-        return () => window.removeEventListener('scroll', handleScroll)
-    }, [])
 
     return (
         <>
-            <div className={`flex flex-row py-3 px-5 bg-transparent z-30 fixed w-full top-0 left-0 ${bg ? 'bg-yellow-400' : 'bg-transparent'}`}>
+            <div className='flex flex-row py-3 px-5 bg-transparent z-30 fixed w-full top-0 left-0'>
                 <div className='flex-2 text-[25px] font-bold text-white'>
-                    <span className={`${bg ? `text-white` : `text-yellow-400`}`}>Now</span> Streamed
+                    <span className='text-yellow-400'>Now</span> Streamed
                 </div>
                 <ul className='flex-4 justify-evenly items-center hidden md:flex'>
                     {
