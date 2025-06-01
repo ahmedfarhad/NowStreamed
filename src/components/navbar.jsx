@@ -3,6 +3,7 @@ import { url_links } from '../assets/constants/index';
 import { FaSearch } from 'react-icons/fa';
 import { FiMenu, FiX } from 'react-icons/fi';
 import SearchBar from './search'
+import img from '../assets/images/logo.png'
 
 function navbar() {
 
@@ -17,8 +18,11 @@ function navbar() {
     return (
         <>
             <div className='flex flex-row py-3 px-5 bg-transparent z-30 fixed w-full top-0 left-0'>
-                <div className='flex-2 text-[25px] font-bold text-white'>
-                    <span className='text-yellow-400'>Now</span> Streamed
+                <div className='flex-2 flex flex-row items-center text-[25px] font-bold text-white'>
+                    <img src={img}  className='w-5 h-5 mr-2'/>
+                    <div>
+                        <span className='text-yellow-400'>Now</span> Streamed
+                        </div>
                 </div>
                 <ul className='flex-4 justify-evenly items-center hidden md:flex'>
                     {
