@@ -21,7 +21,7 @@ function latestmovies() {
   }, [])
 
   return (
-    <div id='latest-movies' className='flex flex-col my-5 w-full'>
+    <div id='latest-movies' className='flex flex-col my-5 w-full mt-7'>
       <div className='w-[180px] text-yellow-400 text-[25px] font-bold mx-auto mb-10'>Latest Movies<span className='block mx-auto border-1 w-[90px]'></span></div>
      <div className="w-full overflow-hidden px-5">
   <Swiper

@@ -18,8 +18,6 @@ function App() {
         <Latestmovies />
         <LatestTvShows />
         <Upcoming />
-        <Top />
-        <Footer />
       </>
     )
   }
@@ -32,6 +30,9 @@ function App() {
            <Route path='/search-results' element={<SearchResults />}/>
         </Routes>
       </BrowserRouter>
+      <Top />
+      <Footer />
+
     </>
   )
 }
