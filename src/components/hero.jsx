@@ -7,12 +7,12 @@ import { ImSpinner2 } from 'react-icons/im';
 
 function Hero() {
     const [movieslist, setMoviesList] = useState([]);
-    const [currentmovie, setCurrentMovie] = useState(0);
+    const [currentmovie, setCurrentMovie] = useState(1);
     const [bgLoaded, setBgLoaded] = useState(false);
 
     const nextSlide = () => {
         if (currentmovie < movieslist.length - 1) {
-            setBgLoaded(false); 
+            setBgLoaded(false);
             setCurrentMovie(currentmovie + 1);
         }
     };
@@ -27,7 +27,7 @@ function Hero() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const resp = await axios.get(`${import.meta.env.VITE_URL}movie/popular?api_key=${import.meta.env.VITE_API_KEY}`);
+                const resp = await axios.get(`${import.meta.env.VITE_URL}trending/all/day?api_key=${import.meta.env.VITE_API_KEY}`);
                 setMoviesList(resp.data.results);
             } catch (e) {
                 console.log(e);
@@ -64,11 +64,11 @@ function Hero() {
             {bgLoaded && (
                 <div className="relative z-20 flex flex-col w-full h-full text-white p-5">
                     <div className='text-[30px] mt-30 ml-2 font-bold sm:ml-10 sm:mt-40 sm:text-[50px]'>
-                        {movieslist[currentmovie]?.title}
+                        {movieslist[currentmovie]?.original_title || movieslist[currentmovie]?.original_name || movieslist[currentmovie]?.title || movieslist[currentmovie]?.name}
                     </div>
 
                     <div className='flex mb-3'>
-                        {movieslist.length > 0 && <Genres m_id={movieslist[currentmovie]?.id} />}
+                        {movieslist.length > 0 && <Genres g_id={movieslist[currentmovie]?.genre_ids} />}
                     </div>
 
                     <div className='text-[15px] w-65 md:w-100 ml-2 sm:ml-10 text-justify'>
@@ -80,7 +80,7 @@ function Hero() {
                     </div>
 
                     <div className='flex mb-3'>
-                        {movieslist.length > 0 && <Watchlist m_id={movieslist[currentmovie]?.id} />}
+                        {movieslist.length > 0 && <Watchlist m_id={movieslist[currentmovie]?.id} media_type = { movieslist[currentmovie]?.media_type } />}
                     </div>
 
                     <div className='flex flex-row justify-end mt-auto mb-5'>

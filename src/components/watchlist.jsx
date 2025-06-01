@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
-function watchlist({ m_id }) {
+function watchlist({ m_id, media_type }) {
   const [details, setDetails] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -9,7 +9,7 @@ function watchlist({ m_id }) {
     const getDetails = async () => {
       try {
         const resp = await axios.get(
-          `${import.meta.env.VITE_URL}movie/${m_id}/watch/providers?api_key=${import.meta.env.VITE_API_KEY}`
+          `${import.meta.env.VITE_URL}${media_type}/${m_id}/watch/providers?api_key=${import.meta.env.VITE_API_KEY}`
         );
         setDetails(resp.data);
       } catch (error) {
@@ -22,10 +22,11 @@ function watchlist({ m_id }) {
     if (m_id) {
       getDetails();
     }
+
+
   }, [m_id]);
 
-  const rentProviders = details?.results?.US?.rent;
-
+  const rentProviders = details?.results?.US?.rent || details?.results?.US?.flatrate;
   return (
     <div className='flex flex-row'>
       <div className='flex flex-row'>

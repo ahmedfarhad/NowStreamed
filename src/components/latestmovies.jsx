@@ -13,7 +13,7 @@ function latestmovies() {
 
   useEffect(() => {
     const getMovies = async () => {
-      const resp = await axios.get(`${import.meta.env.VITE_URL}movie/now_playing?api_key=${import.meta.env.VITE_API_KEY}&page=2`);
+      const resp = await axios.get(`${import.meta.env.VITE_URL}discover/movie?api_key=${import.meta.env.VITE_API_KEY}&page=1`);
       setData(resp.data);
     }
 

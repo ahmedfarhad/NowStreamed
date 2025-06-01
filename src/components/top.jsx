@@ -27,7 +27,7 @@ function top() {
     return (
         <>
             {show &&
-                <button className='hover:cursor-pointer fixed bg-yellow-400 w-10 h-10 z-10 bottom-2 right-5 flex justify-center items-center text-white text-[20px] rounded-full' onClick={moveToTop}>
+                <button className='hover:cursor-pointer fixed bg-yellow-400 w-10 h-10 z-10 bottom-7 right-5 flex justify-center items-center text-white text-[20px] rounded-full' onClick={moveToTop}>
                     <FiArrowUp />
                 </button>
             }
