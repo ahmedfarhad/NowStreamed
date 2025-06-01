@@ -39,7 +39,7 @@ function navbar() {
                 </div>
             </div>
             {isshow && 
-            <div className='flex flex-col items-center justify-center bg-transparent mt-15 z-20 fixed w-full'>
+            <div className='flex flex-col items-center justify-center bg-transparent mt-15 z-30 fixed w-full backdrop-blur-md'>
                 <ul className='flex flex-col justify-evenly items-center flex md:hidden'>
                     {
                         url_links.map((item, index) => (
@@ -49,13 +49,13 @@ function navbar() {
                         ))
                     }
                 </ul>
-                <div className='md:hidden items-center mt-2'>
+                <div className='md:hidden items-center my-2'>
                     <button className='hover:text-yellow-400 hover:cursor-pointer text-white' onClick={() => setShowSearch(!showserach)}><FaSearch /></button>
                 </div>
             </div>
             }
 
-            {showserach && <SearchBar />}
+            {showserach && <SearchBar onClose={setShowSearch} />}
         </>
     )
 }
