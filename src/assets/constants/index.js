@@ -1,19 +1,19 @@
 const url_links = [
     {
         name: 'home',
-        link: '/home'
+        link: '/#home'
     },
     {
-        name: 'movies',
-        link: '/movies'
+        name: 'latest movies',
+        link: '/#latest-movies'
     },
     {
-        name: 'tv shows',
-        link: '/tv-shows'
+        name: 'latest tv shows',
+        link: '/#latest-tv'
     },
     {
         name: 'upcoming',
-        link: '/upcoming'
+        link: '/#upcoming'
     }
 ]
 

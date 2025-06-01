@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { url_links } from '../assets/constants/index';
 import { FaSearch } from 'react-icons/fa';
 import { FiMenu, FiX } from 'react-icons/fi';
+import SearchBar from './search'
 
 function navbar() {
 
     const [isshow, setIsShow] = useState(false)
+    const [showserach, setShowSearch] = useState(false)
 
     const openNavBar = () => {
         setIsShow(!isshow);
@@ -28,7 +30,7 @@ function navbar() {
                     }
                 </ul>
                 <div className='flex-1 hidden md:flex items-center justify-end'>
-                    <button className='hover:text-yellow-400 hover:cursor-pointer w-10 text-white'><FaSearch /></button>
+                    <button className='hover:text-yellow-400 hover:cursor-pointer w-10 text-white' onClick={() => setShowSearch(!showserach)}><FaSearch /></button>
                 </div>
                 <div className='flex flex-1 md:hidden items-center justify-end'>
                     <button className='hover:text-yellow-400 hover:cursor-pointer text-[20px] text-white' onClick={openNavBar}>
@@ -48,10 +50,12 @@ function navbar() {
                     }
                 </ul>
                 <div className='md:hidden items-center mt-2'>
-                    <button className='hover:text-yellow-400 hover:cursor-pointer text-white'><FaSearch /></button>
+                    <button className='hover:text-yellow-400 hover:cursor-pointer text-white' onClick={() => setShowSearch(!showserach)}><FaSearch /></button>
                 </div>
             </div>
             }
+
+            {showserach && <SearchBar />}
         </>
     )
 }

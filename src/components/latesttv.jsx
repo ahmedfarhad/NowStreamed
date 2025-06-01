@@ -14,7 +14,6 @@ function latesttv() {
         const getTvShows = async () => {
             const resp = await axios.get(`${import.meta.env.VITE_URL}tv/popular?api_key=${import.meta.env.VITE_API_KEY}&page=9`);
             setTvShows(resp.data);
-            console.log(resp.data.results)
         }
 
         getTvShows();
@@ -22,7 +21,7 @@ function latesttv() {
     }, [])
 
     return (
-        <div className='flex flex-col my-5 w-full'>
+        <div id='latest-tv' className='flex flex-col my-5 w-full'>
             <div className='text-yellow-400 mt-5 text-[25px] w-[210px] font-bold mx-auto mb-10'>Latest Tv Shows <span className='block w-[105px] border-1 mx-auto'></span></div>
             <div className="w-full overflow-hidden px-5">
                 <Swiper

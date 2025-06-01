@@ -49,7 +49,7 @@ function Hero() {
     const backgroundImage = `${import.meta.env.VITE_IMAGE_URL}${movieslist[currentmovie]?.backdrop_path}`;
 
     return (
-        <div className='relative w-full h-screen overflow-hidden'>
+        <div id='home' className='relative w-full h-screen overflow-hidden'>
             <div
                 className={`absolute inset-0 bg-center bg-cover bg-no-repeat transition-opacity duration-700 ${bgLoaded ? 'opacity-100' : 'opacity-0'}`}
                 style={{ backgroundImage: `url(${backgroundImage})` }}

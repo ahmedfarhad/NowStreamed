@@ -5,18 +5,31 @@ import LatestTvShows from './components/latesttv'
 import Upcoming from './components/upcoming'
 import Top from './components/top'
 import Footer from './components/footer'
+import { Routes, BrowserRouter, Route } from 'react-router-dom'
 
 function App() {
 
+  const Homelayout = () => {
+    return (
+      <>
+        <Navbar />
+        <Hero />
+        <Latestmovies />
+        <LatestTvShows />
+        <Upcoming />
+        <Top />
+        <Footer />
+      </>
+    )
+  }
+
   return (
     <>
-      <Navbar />
-      <Hero />
-      <Latestmovies />
-      <LatestTvShows />
-      <Upcoming />
-      <Top />
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+           <Route path='/' element={<Homelayout />}/>
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }

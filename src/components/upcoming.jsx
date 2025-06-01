@@ -20,7 +20,7 @@ function upcoming() {
     }, [])
 
     return (
-        <div className='flex flex-col w-full '>
+        <div id='upcoming' className='flex flex-col w-full '>
             <div className='text-yellow-400 my-7 text-[25px] mx-auto font-bold w-[140px]'>Upcoming <span className='mx-auto w-[70px] block border-1'></span></div>
 
             <div className='w-full mt-4 px-5'>
